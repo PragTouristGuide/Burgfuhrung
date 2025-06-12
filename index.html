@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Matyášova brána</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       padding: 1em;
       line-height: 1.6;
+      max-width: 900px;
+      margin: 0 auto;
     }
 
     h1 {
       text-align: center;
+      font-size: 2em;
+      margin-bottom: 0.5em;
     }
 
     iframe {
-      display: block;
-      margin: 20px auto;
-      max-width: 100%;
+      width: 100%;
+      height: 300px;
+      border: none;
+      margin: 1em 0;
+      border-radius: 8px;
     }
 
     .navigace {
@@ -32,7 +39,8 @@
       text-decoration: none;
       padding: 0.75em 1.5em;
       border-radius: 8px;
-      font-size: 1.1em;
+      font-size: 1.2em;
+      user-select: none;
     }
 
     .navigace a:hover {
@@ -44,23 +52,18 @@
   <h1>Matyášova brána</h1>
 
   <!-- YouTube video -->
-  <iframe width="560" height="315"
+  <iframe
     src="https://www.youtube.com/embed/ZM86oAJqY5E?si=S_lAceeEF3gBF7M3"
-    title="YouTube video přehrávač"
-    frameborder="0"
+    title="Video Matyášova brána"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen>
   </iframe>
 
-  <!-- Google mapa přiblížená na Matyášovu bránu -->
+  <!-- Google mapa na tvou konkrétní značku -->
   <iframe
-    width="600"
-    height="400"
-    frameborder="0"
-    style="border:0"
-    src="https://www.google.com/maps?q=Matyášova+brána,+Pražský+hrad&hl=cs&z=19&output=embed"
-    allowfullscreen>
-  </iframe>
+    src="https://www.google.com/maps/d/embed?mid=1Kk-kcNdVZ4aW3FlO6HgS9ALr55o&ll=50.0869,14.4087&z=18"
+    title="Mapa Matyášova brána"
+  ></iframe>
 
   <!-- Odkaz na další zastávku -->
   <div class="navigace">
