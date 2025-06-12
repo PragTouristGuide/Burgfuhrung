@@ -2,72 +2,61 @@
 <html lang="cs">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Matyášova brána</title>
+  <title>Katedrála svatého Víta</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      padding: 1em;
-      line-height: 1.6;
-      max-width: 900px;
-      margin: 0 auto;
+      margin: 0;
+      font-family: sans-serif;
     }
-
     h1 {
+      font-size: 1.4em;
       text-align: center;
-      font-size: 2em;
-      margin-bottom: 0.5em;
+      margin-top: 0.5em;
     }
-
+    .video-container, .map-container {
+      width: 100vw;
+      height: 45vh;
+    }
     iframe {
       width: 100%;
-      height: 300px;
-      border: none;
-      margin: 1em 0;
-      border-radius: 8px;
+      height: 100%;
+      border: 0;
     }
-
-    .navigace {
+    .button-container {
       text-align: center;
-      margin-top: 2em;
+      margin: 1em 0;
     }
-
-    .navigace a {
-      display: inline-block;
-      background-color: #0077cc;
+    .button-container a {
+      font-size: 1.2em;
+      padding: 0.5em 1em;
+      background: #007bff;
       color: white;
       text-decoration: none;
-      padding: 0.75em 1.5em;
       border-radius: 8px;
-      font-size: 1.2em;
-      user-select: none;
-    }
-
-    .navigace a:hover {
-      background-color: #005fa3;
     }
   </style>
 </head>
 <body>
-  <h1>Matyášova brána</h1>
+  <h1>Katedrála svatého Víta</h1>
 
-  <!-- YouTube video -->
-  <iframe
-    src="https://www.youtube.com/embed/ZM86oAJqY5E?si=S_lAceeEF3gBF7M3"
-    title="Video Matyášova brána"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowfullscreen>
-  </iframe>
+  <div class="video-container">
+    <iframe 
+      src="https://www.youtube.com/embed/ZM86oAJqY5E?si=S_lAceeEF3gBF7M3"
+      allowfullscreen
+      title="Video">
+    </iframe>
+  </div>
 
-  <!-- Google mapa na tvou konkrétní značku s tvými souřadnicemi -->
-  <iframe
-    src="https://www.google.com/maps/d/embed?mid=1sqO5K3fWRlKuS_gVjYuj_XBUODZ-DzE&hl=cs"
-    title="Mapa Matyášova brána"
-  ></iframe>
+  <div class="map-container">
+    <iframe 
+      src="https://www.google.com/maps/d/embed?mid=1sqO5K3fWRlKuS_gVjYuj_XBUODZ-DzE&hl=cs&ll=50.09091,14.40042&z=20"
+      allowfullscreen
+      title="Mapa katedrály">
+    </iframe>
+  </div>
 
-  <!-- Odkaz na další zastávku -->
-  <div class="navigace">
-    <a href="katedralasvatehovita.html">Pokračovat ke katedrále sv. Víta →</a>
+  <div class="button-container">
+    <a href="starypalac.html">Pokračovat ke Starému královskému paláci</a>
   </div>
 </body>
 </html>
