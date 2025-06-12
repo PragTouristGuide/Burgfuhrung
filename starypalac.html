@@ -1,169 +1,186 @@
 <!DOCTYPE html>
-<html>
+<html lang="cs">
 <head>
-  <title>Mapa prohlídky</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Starý královský palác - e-guide</title>
+
   <style>
-    #map { height: 100vh; }
+    body {
+      font-family: sans-serif;
+      margin: 10px;
+      background: #f5f5f5;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    p.description {
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+    lite-youtube {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      margin-bottom: 1rem;
+    }
+    #map {
+      height: 350px;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    .footer-links {
+      display: flex;
+      gap: 10px;
+      justify-content: space-between;
+    }
+    .footer-links a {
+      flex: 1;
+      background: #007bff;
+      color: white;
+      padding: 10px;
+      text-decoration: none;
+      border-radius: 6px;
+      text-align: center;
+      font-weight: bold;
+      user-select: none;
+    }
+    .footer-links a:hover {
+      background: #0056b3;
+    }
   </style>
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-sA+4pskG4tQh9WsP8RbUVv92cA3N2nFIR+3PaD6RD3A="
+    crossorigin=""
+  />
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-pMprV6LU6Ntku3ef2iWMVt6OpY0tMPeZ6tRVR1EjH8Y="
+    crossorigin=""
+  ></script>
+  <script
+    type="module"
+    src="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.2.0/src/lite-yt-embed.js"
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.2.0/src/lite-yt-embed.css"
+  />
 </head>
 <body>
+  <h1>Starý královský palác</h1>
+  <p class="description">Krátké video o Starém královském paláci a interaktivní mapa s trasou prohlídky.</p>
+
+  <lite-youtube
+    videoid="0fCOJPyp2C4"
+    playlabel="Přehrát video: Starý královský palác"
+  ></lite-youtube>
+
   <div id="map"></div>
 
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-  <script>
-    const map = L.map('map').setView([50.091, 14.400], 16);
+  <div class="footer-links">
+    <a href="katedrala.html">⬅️ Zpět ke katedrále</a>
+    <a href="bazilika.html">➡️ Pokračovat k bazilice sv. Jiří</a>
+  </div>
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; OpenStreetMap contributors'
+  <script>
+    // Inicializace mapy Leaflet
+    const map = L.map("map").setView([50.0906, 14.3986], 16);
+
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 22,
+      attribution: "&copy; OpenStreetMap",
     }).addTo(map);
 
-    const geojson = {
-      "type": "FeatureCollection",
-      "features": [
-        {
-          "type": "Feature",
-          "geometry": {
-            "type": "LineString",
-            "coordinates": [
-              [14.3985806, 50.0930742],
-              [14.3985686, 50.0931688],
-              [14.3982991, 50.0931534],
-              [14.3987257, 50.0905758],
-              [14.3982485, 50.0897638],
-              [14.39897, 50.08998],
-              [14.39881, 50.09024],
-              [14.39891, 50.09045],
-              [14.39944, 50.09056],
-              [14.39983, 50.09081],
-              [14.4011, 50.09106],
-              [14.39991, 50.09063],
-              [14.39967, 50.09046],
-              [14.39995, 50.0902],
-              [14.40022, 50.09014],
-              [14.40052, 50.09025],
-              [14.40074, 50.09041],
-              [14.40116, 50.09044],
-              [14.40197, 50.09065],
-              [14.40214, 50.091],
-              [14.40239, 50.09117],
-              [14.40274, 50.09131],
-              [14.40229, 50.09111],
-              [14.40238, 50.09103],
-              [14.4026, 50.09106],
-              [14.40287, 50.09116],
-              [14.40349, 50.09145],
-              [14.40335, 50.09166],
-              [14.40388, 50.09177],
-              [14.40382, 50.09192],
-              [14.40272, 50.09173],
-              [14.40433, 50.09204],
-              [14.4049, 50.0922],
-              [14.40434, 50.09195],
-              [14.40438, 50.09178],
-              [14.40409, 50.09162],
-              [14.40475, 50.09173],
-              [14.40591, 50.09186],
-              [14.40618, 50.092]
-            ]
-          },
-          "properties": {
-            "name": "Trasa prohlídky",
-            "stroke": "#6600cc",
-            "stroke-width": 3
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-            "type": "Point",
-            "coordinates": [14.3986778, 50.0930746]
-          },
-          "properties": {
-            "name": "Start: Erzbischöfliches Palais"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-            "type": "Point",
-            "coordinates": [14.39827, 50.089702]
-          },
-          "properties": {
-            "name": "Erster Burghof"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-            "type": "Point",
-            "coordinates": [14.398988, 50.089991]
-          },
-          "properties": {
-            "name": "Zweiter Burghof"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-            "type": "Point",
-            "coordinates": [14.400421, 50.09091]
-          },
-          "properties": {
-            "name": "Veitsdom"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-            "type": "Point",
-            "coordinates": [14.4016893, 50.0905847]
-          },
-          "properties": {
-            "name": "Königspalais"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-            "type": "Point",
-            "coordinates": [14.402508, 50.091213]
-          },
-          "properties": {
-            "name": "St.-Georgs-Basilika"
-          }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-            "type": "Point",
-            "coordinates": [14.403924, 50.091966]
-          },
-          "properties": {
-            "name": "Goldenes Gässchen"
-          }
-        }
-      ]
+    // Data trasy (GeoJSON)
+    const tourRoute = {
+      type: "Feature",
+      geometry: {
+        type: "LineString",
+        coordinates: [
+          [14.3985806, 50.0930742],
+          [14.3985686, 50.0931688],
+          [14.3982991, 50.0931534],
+          [14.3987257, 50.0905758],
+          [14.3982485, 50.0897638],
+          [14.39897, 50.08998],
+          [14.39881, 50.09024],
+          [14.39891, 50.09045],
+          [14.39944, 50.09056],
+          [14.39983, 50.09081],
+          [14.4011, 50.09106],
+          [14.39991, 50.09063],
+          [14.39967, 50.09046],
+          [14.39995, 50.0902],
+          [14.40022, 50.09014],
+          [14.40052, 50.09025],
+          [14.40074, 50.09041],
+          [14.40116, 50.09044],
+          [14.40197, 50.09065],
+          [14.40214, 50.091],
+          [14.40239, 50.09117],
+          [14.40274, 50.09131],
+          [14.40229, 50.09111],
+          [14.40238, 50.09103],
+          [14.4026, 50.09106],
+          [14.40287, 50.09116],
+          [14.40349, 50.09145],
+          [14.40335, 50.09166],
+          [14.40388, 50.09177],
+          [14.40382, 50.09192],
+          [14.40272, 50.09173],
+          [14.40433, 50.09204],
+          [14.4049, 50.0922],
+          [14.40434, 50.09195],
+          [14.40438, 50.09178],
+          [14.40409, 50.09162],
+          [14.40475, 50.09173],
+          [14.40591, 50.09186],
+          [14.40618, 50.092],
+        ],
+      },
+      properties: {
+        name: "Führung: Prager Burg – 2,5 Std. mit Eintritt",
+      },
     };
 
-    const geoLayer = L.geoJSON(geojson, {
-      style: function (feature) {
-        if (feature.geometry.type === "LineString") {
-          return {
-            color: feature.properties.stroke || "#6600cc",
-            weight: feature.properties["stroke-width"] || 3
-          };
-        }
-      },
-      pointToLayer: function (feature, latlng) {
-        return L.marker(latlng).bindPopup(`<b>${feature.properties.name}</b>`);
-      }
-    }).addTo(map);
+    // Převod souřadnic na LatLng objekty Leafletu
+    const latlngs = tourRoute.geometry.coordinates.map(
+      (c) => [c[1], c[0]] // [lat, lng]
+    );
 
-    // Automatické přiblížení na trasu a body
-    map.fitBounds(geoLayer.getBounds());
+    // Přidání trasy na mapu jako polyline
+    L.polyline(latlngs, { color: "#6600cc", weight: 4, opacity: 0.8 }).addTo(map);
+
+    // Přidání bodů zajímavostí jako markery
+    const points = [
+      {
+        coords: [50.0930746, 14.3986778],
+        name: "Treffpunkt / Ausgangspunkt",
+        desc: "vor dem Erzbischöflichen Palais,<br>Hradčanské náměstí 16/56",
+      },
+      { coords: [50.089702, 14.39827], name: "Erster Burghof" },
+      { coords: [50.089991, 14.398988], name: "Zweiter Burghof" },
+      { coords: [50.09091, 14.400421], name: "Veitsdom" },
+      { coords: [50.0905847, 14.4016893], name: "Königspalais" },
+      { coords: [50.091213, 14.402508], name: "St.-Georgs-Basilika" },
+      { coords: [50.091966, 14.403924], name: "Goldenes Gässchen" },
+    ];
+
+    points.forEach(({ coords, name, desc }) => {
+      const marker = L.marker(coords).addTo(map);
+      marker.bindPopup(`<b>${name}</b>${desc ? "<br>" + desc : ""}`);
+    });
   </script>
 </body>
 </html>
