@@ -2,40 +2,60 @@
 <html lang="cs">
 <head>
   <meta charset="UTF-8">
+  <title>Matyášova brána – Průvodce</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Matyášova brána – Průvodce Pražským hradem</title>
   <style>
     body {
       font-family: sans-serif;
-      text-align: center;
-      padding: 2em;
+      margin: 0;
+      padding: 10px;
+      background: #f4f4f4;
+    }
+    h1 {
+      font-size: 1.5em;
+      margin-top: 10px;
     }
     iframe {
-      width: 100%;
-      max-width: 560px;
-      height: 315px;
+      max-width: 100%;
       border: none;
     }
-    button {
-      margin-top: 2em;
-      padding: 1em 2em;
-      font-size: 1em;
+    .mapa {
+      margin-top: 20px;
+    }
+    .navigace {
+      background: #fff;
+      padding: 10px;
+      margin-top: 20px;
+      border-left: 4px solid #0077cc;
     }
   </style>
 </head>
 <body>
+
   <h1>Matyášova brána</h1>
-  <p>Podívej se na průvodcovské video:</p>
-  <iframe 
-    src="https://www.youtube.com/embed/ZM86oAJqY5E?autoplay=1&rel=0" 
-    title="Matyášova brána – video průvodce"
-    allow="autoplay; encrypted-media" 
-    allowfullscreen>
+
+  <!-- YouTube video -->
+  <iframe width="100%" height="215"
+    src="https://www.youtube.com/embed/ZM86oAJqY5E?si=S_lAceeEF3gBF7M3"
+    title="YouTube video přehrávač" allowfullscreen>
   </iframe>
 
-  <p>Až video skončí, klikni na tlačítko níže pro pokračování.</p>
-  <button onclick="window.location.href='svaty-vit.html'">
-    Pokračovat ke katedrále sv. Víta
-  </button>
+  <!-- Google My Maps vložená mapa -->
+  <div class="mapa">
+    <h2>Trasa ke Katedrále sv. Víta</h2>
+    <iframe src="https://www.google.com/maps/d/embed?mid=1Kk-kcNdVZ4aW3FlO6HgS9ALr55o&ehbc=2E312F" width="100%" height="400"></iframe>
+  </div>
+
+  <!-- Textová záloha pro ty, kdo nemají lokalizaci -->
+  <div class="navigace">
+    <h3>Nevidíš mapu? Zkus to takto:</h3>
+    <ul>
+      <li>Projdi Matyášovou bránou.</li>
+      <li>Pokračuj rovně na 2. nádvoří.</li>
+      <li>Na konci nádvoří zaboč mírně vpravo.</li>
+      <li>Ve třetím nádvoří uvidíš přímo před sebou Katedrálu sv. Víta.</li>
+    </ul>
+  </div>
+
 </body>
 </html>
