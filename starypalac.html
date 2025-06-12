@@ -24,14 +24,19 @@
       max-width: 600px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      min-height: 100vh;
+      height: 100vh;
       padding: 10px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 1.8rem;
+      margin: 10px 0 20px;
     }
 
     .video-container, .map-container {
       flex: 0 0 auto;
-      height: 35vh;
+      height: 32vh;
       margin-bottom: 10px;
     }
 
@@ -43,22 +48,23 @@
     }
 
     .button-container {
+      flex: 0 0 auto;
+      text-align: center;
       display: flex;
       justify-content: space-between;
       gap: 10px;
-      flex-wrap: wrap;
       margin-top: 10px;
     }
 
     .button-container a {
-      flex: 1 1 48%;
+      flex: 1;
       font-size: 1rem;
-      padding: 10px;
+      padding: 10px 12px;
       background-color: #007bff;
       color: white;
       text-decoration: none;
       border-radius: 8px;
-      text-align: center;
+      display: inline-block;
     }
 
     .button-container a:hover {
@@ -68,6 +74,8 @@
 </head>
 <body>
   <div class="wrapper">
+    <h1>Starý královský palác</h1>
+
     <div class="video-container">
       <iframe 
         src="https://www.youtube.com/embed/0fCOJPyp2C4"
@@ -78,13 +86,13 @@
 
     <div class="map-container">
       <iframe 
-        src="https://www.google.com/maps/d/u/0/embed?mid=1sqO5K3fWRlKuS_gVjYuj_XBUODZ-DzE&hl=cs&ll=50.09064,14.40138&z=20"
+        src="https://www.google.com/maps/d/embed?mid=1sqO5K3fWRlKuS_gVjYuj_XBUODZ-DzE&hl=cs&ll=50.09065,14.4009&z=20"
         title="Mapa Starého královského paláce">
       </iframe>
     </div>
 
     <div class="button-container">
-      <a href="index.html">⬅️ Zpět ke Katedrále svatého Víta</a>
+      <a href="index.html">⬅️ Zpět ke katedrále</a>
       <a href="bazilika.html">➡️ Pokračovat k bazilice sv. Jiří</a>
     </div>
   </div>
