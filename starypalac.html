@@ -2,24 +2,31 @@
 <html lang="cs">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Starý královský palác</title>
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
       font-family: sans-serif;
       background-color: #f9f9f9;
+      overflow: hidden;
     }
 
-    h1 {
-      font-size: 5vw;
-      text-align: center;
-      margin: 1em 0 0.5em 0;
+    .container {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
     }
 
-    .video-container, .map-container {
-      width: 100vw;
-      height: 45vh;
+    .video, .map {
+      flex: 1;
+      width: 100%;
     }
 
     iframe {
@@ -29,19 +36,21 @@
     }
 
     .button-container {
+      height: 60px;
       text-align: center;
-      margin: 2em 0;
+      background-color: #f9f9f9;
     }
 
     .button-container a {
-      font-size: 6vw;
-      padding: 1em 2em;
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 4.5vw;
       background: #007bff;
       color: white;
       text-decoration: none;
-      border-radius: 12px;
-      display: inline-block;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
 
     .button-container a:hover {
@@ -50,26 +59,26 @@
   </style>
 </head>
 <body>
-  <h1>Starý královský palác</h1>
+  <div class="container">
+    <div class="video">
+      <iframe 
+        src="https://www.youtube.com/embed/0fCOJPyp2C4"
+        title="Starý královský palác video"
+        allowfullscreen>
+      </iframe>
+    </div>
 
-  <div class="video-container">
-    <iframe 
-      src="https://www.youtube.com/embed/0fCOJPyp2C4"
-      allowfullscreen
-      title="Starý královský palác video">
-    </iframe>
-  </div>
+    <div class="map">
+      <iframe 
+        src="https://www.google.com/maps/d/embed?mid=1sqO5K3fWRlKuS_gVjYuj_XBUODZ-DzE&hl=cs&ll=50.09064356525603,14.401380758374648&z=20"
+        title="Mapa Starého paláce"
+        allowfullscreen>
+      </iframe>
+    </div>
 
-  <div class="map-container">
-    <iframe 
-      src="https://www.google.com/maps/d/embed?mid=1sqO5K3fWRlKuS_gVjYuj_XBUODZ-DzE&hl=cs&ll=50.09064356525603,14.401380758374648&z=20"
-      allowfullscreen
-      title="Mapa starého paláce">
-    </iframe>
-  </div>
-
-  <div class="button-container">
-    <a href="index.html">⬅️ Zpět na začátek</a>
+    <div class="button-container">
+      <a href="index.html">⬅️ Zpět na začátek</a>
+    </div>
   </div>
 </body>
 </html>
