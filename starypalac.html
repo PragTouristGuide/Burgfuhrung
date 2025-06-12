@@ -12,27 +12,22 @@
       height: 100%;
       font-family: sans-serif;
       background: #f9f9f9;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      display: flex; justify-content: center; align-items: center;
     }
 
     .wrapper {
-      width: 100%; max-width: 600px;
-      display: flex;
-      flex-direction: column;
+      width: 100%; max-width: 900px;
+      display: flex; flex-direction: column;
       justify-content: space-between;
-      height: 95vh;
-      padding: 1rem;
-      background: white;
-      border-radius: 8px;
+      height: 95vh; padding: 1rem;
+      background: white; border-radius: 8px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
 
     h1 {
       text-align: center;
       font-size: 1.8rem;
-      margin: 0; /* žádná spodní mezera */
+      margin: 0; /* těsně nad videem */
     }
 
     @media (max-width: 600px) {
@@ -42,10 +37,9 @@
     }
 
     .video-container, .map-container {
-      height: 36vh; /* větší video pro mobil */
-      margin-top: 0.75rem;
-      margin-bottom: 0.75rem;
       flex: 0 0 auto;
+      height: 36vh;
+      margin: 0.75rem 0;
     }
 
     iframe {
@@ -81,16 +75,22 @@
     <h1>Starý královský palác</h1>
 
     <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/0fCOJPyp2C4" allowfullscreen title="Video Starý královský palác"></iframe>
+      <iframe
+        src="https://www.youtube.com/embed/0fCOJPyp2C4"
+        allowfullscreen
+        title="Video Starého královského paláce"></iframe>
     </div>
 
     <div class="map-container">
-      <iframe src="https://www.google.com/maps/d/embed?mid=1sqO5K3fWRlKuS_gVjYuj_XBUODZ-DzE&hl=cs" title="Mapa Starý královský palác"></iframe>
+      <iframe
+        src="https://www.google.com/maps/d/embed?mid=1sqO5K3fWRlKuS_gVjYuj_XBUODZ-DzE&hl=cs"
+        allowfullscreen
+        title="Mapa Starého královského paláce"></iframe>
     </div>
 
     <div class="button-container">
-      <a href="index.html">⬅️ Katedrála sv. Víta</a>
-      <a href="bazilika.html">➡️ Bazilika sv. Jiří</a>
+      <a href="index.html">⬅️ Katedrála svatého Víta</a>
+      <a href="bazilika.html">➡️ Bazilika svatého Jiří</a>
     </div>
   </div>
 </body>
